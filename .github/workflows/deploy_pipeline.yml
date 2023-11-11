@@ -48,7 +48,7 @@ jobs:
         run: npm run build
       - uses: actions/upload-artifact@v3
         with:
-          name: dist
+          name: dist_angular
           path: dist/browswer
 
   test:
@@ -66,8 +66,8 @@ jobs:
         run: npm install
       - uses: actions/download-artifact@v3
         with:
-          name: dist
-          path: dist
+          name: dist_angular
+          # path: dist
       - name: Test
         run: npm run test
 
