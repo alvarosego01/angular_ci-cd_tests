@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Linter
         run: npm run lint
 
@@ -43,7 +43,7 @@ jobs:
           cache: 'npm'
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Build
         run: npm run build
       - uses: actions/upload-artifact@v3
@@ -63,7 +63,7 @@ jobs:
           cache: 'npm'
           node-version: 18
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - uses: actions/download-artifact@v3
         with:
           name: dist
