@@ -82,11 +82,11 @@ jobs:
       - name: Go deploy to vps
         if: ${{ github.event_name == 'push' }}
         uses: appleboy/scp-action@master
+        env:
+          HOST:  ${{ secrets.VPS_HOST }}
+          USERNAME:  ${{ secrets.VPS_USER }}
+          PORT:  ${{ secrets.VPS_PORT }}
+          PASSWORD: ${{ secrets.VPS_PASS }}
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          # key: ${{ secrets.SSH2 }}
-          passphrase: ${{ secrets.VPS_PASS }}
-          port: ${{ secrets.VPS_PORT }}
           source: "./dist/browser"
           target: "/home/alvarosegovia/domains/ga.alvarosegovia.com/public_html"
