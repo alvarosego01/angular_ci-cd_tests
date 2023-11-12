@@ -95,8 +95,11 @@ jobs:
 
       - name: Archive Build Output
         run: |
-          cd ./dist/browser/
-          zip -r build.zip .
+          mkdir temp_dist
+          mkdir temp_dist/dist
+          mv ./dist/browser/* temp_dist/dist/
+          zip -r /tmp/build.zip temp_dist
+          rm -rf temp_dist
 
       - name: Copy Files to Server
         uses: appleboy/scp-action@master
