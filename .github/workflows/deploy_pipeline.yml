@@ -94,7 +94,7 @@ jobs:
         run: ng build
 
       - name: Archive Build Output
-        run: zip -r build.zip dist/browser
+        run: zip -r build.zip dist
 
       - name: Copy Files to Server
         uses: appleboy/scp-action@master
@@ -118,6 +118,6 @@ jobs:
           script: |
             sudo rm -rf /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/*
             sudo unzip /tmp/build.zip -d /tmp/build
-            sudo mv /tmp/build/dist/browser/* /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/dist/
+            sudo mv /tmp/build/dist/browser/* /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html
             sudo rm -rf /tmp/build
             sudo rm /tmp/build.zip
