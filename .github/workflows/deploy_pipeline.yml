@@ -91,7 +91,7 @@ jobs:
         run: npm install -g @angular/cli
 
       - name: Build Project
-        run: ng build --prod
+        run: ng build
 
       - name: Archive Build Output
         run: zip -r build.zip dist/
