@@ -116,6 +116,6 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           # key: ${{ secrets.KEY }}
           script: |
-            rm -rf /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/*
-            unzip /tmp/build.zip -d /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html
-            rm /tmp/build.zip
+            sudo rm -rf /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/*
+            sudo unzip /tmp/build.zip -d /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html
+            sudo rm /tmp/build.zip
