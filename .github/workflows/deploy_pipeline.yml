@@ -118,6 +118,6 @@ jobs:
           script: |
             sudo rm -rf /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/*
             sudo unzip /tmp/build.zip -d /tmp/build
-            sudo mv /tmp/build/* /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/dist/
+            sudo mv /tmp/build/dist/browser/* /home/alvarosegovia/domains/ga.alvarosegovia.com/public_html/dist/
             sudo rm -rf /tmp/build
             sudo rm /tmp/build.zip
