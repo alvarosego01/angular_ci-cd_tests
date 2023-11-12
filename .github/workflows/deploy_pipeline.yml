@@ -80,13 +80,13 @@ jobs:
           fetch-depth: 0
 
       - name: Go deploy to vps
-        if: ${{ github.event_name == 'push' }}
+        if: ${{github.event_name == 'push'}}
         uses: appleboy/scp-action@master
         env:
-          HOST:  ${{ secrets.VPS_HOST }}
-          USERNAME:  ${{ secrets.VPS_USER }}
-          PORT:  ${{ secrets.VPS_PORT }}
-          PASSWORD: ${{ secrets.VPS_PASS }}
+          HOST:  ${{secrets.VPS_HOST}}
+          USERNAME:  ${{secrets.VPS_USER}}
+          PORT:  ${{secrets.VPS_PORT}}
+          PASSWORD: ${{secrets.VPS_PASS}}
         with:
           source: "./dist/browser"
           target: "/home/alvarosegovia/domains/ga.alvarosegovia.com/public_html"
